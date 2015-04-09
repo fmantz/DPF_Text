@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/no.hib.dpf.text/src-gen" editDirectory="/no.hib.dpf.text.edit/src"
+    editorDirectory="/no.hib.dpf.text.editor/src" modelPluginID="no.hib.dpf.text"
+    forceOverwrite="true" modelName="DPFText" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="no.hib.dpf.text.edit"
+    editorPluginID="no.hib.dpf.text.editor" runtimeVersion="2.10">
+  <genPackages prefix="Tdpf" basePackage="no.hib.dpf.text" disposableProviderFactory="true"
+      ecorePackage="DPFText.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DPFText.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TBOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TCHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TBYTE"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TSHORT"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TINT"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TLONG"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TFLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TDOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//DataType/TSTRING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DPFText.ecore#//GraphvizOutput">
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/JPG"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/BMP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/CANON"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/DOT"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/XDOT"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/CMAP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/EPS"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/FIG"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/GD"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/GD2"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/GIF"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/GTK"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/ICO"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/IMAP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/CMAPX"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/IMAP_NP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/CMAP_NP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/ISMAP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/JPEG"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/JPE"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/PDF"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/PLAIN"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/PLAIN_EXT"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/PNG"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/PS"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/PS2"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/SVG"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/SVGZ"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/TIF"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/TIFF"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/VML"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/VMLZ"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/VRML"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/WBMP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/WEBP"/>
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//GraphvizOutput/XLIB"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="DPFText.ecore#//ConstraintLanguage">
+      <genEnumLiterals ecoreEnumLiteral="DPFText.ecore#//ConstraintLanguage/OCL"/>
+    </genEnums>
+    <genClasses ecoreClass="DPFText.ecore#//Model"/>
+    <genClasses ecoreClass="DPFText.ecore#//Batch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Batch/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Command"/>
+    <genClasses ecoreClass="DPFText.ecore#//MakeEmf">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//MakeEmf/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//MakeEcore">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//MakeEcore/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//MakeImage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//MakeImage/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//MakeImage/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//MakeDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//MakeDiagram/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//MakeDiagram/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//TestMatch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//TestMatch/search"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//TestMatch/into"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Specification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Specification/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Specification/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Specification/output"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Specification/graph"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Specification/atomicConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//ConstraintList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//ConstraintList/constraintSemantic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//ConstraintList/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//ChoosenSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//ChoosenSpecification/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//ChoosenSpecification/versionName"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Version">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Version/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Version/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Version/nextNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//ChoosenSignature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//ChoosenSignature/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//ChoosenSignature/versionName"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Constraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Constraint/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Constraint/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Constraint/arity_d"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Signature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Signature/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Signature/input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Signature/validators"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Validator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Validator/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Validator/parameter_vars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Validator/arity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Validator/ocl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Validator/errorMsg"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Graph">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Graph/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Element">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Element/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Element/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Arrow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Arrow/sr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Arrow/tgDataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Arrow/tgValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Arrow/tgNode"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Node">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Node/inh"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Node/properties"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//NodeSimple">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//NodeSimple/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//NodeSimple/type"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//Property">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Property/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//Property/tgDataType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Property/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Property/tgValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//Property/tgNode"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//AttributeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//AttributeValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//AttributeValue/variableId"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//DpfId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//DpfId/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DPFText.ecore#//DpfId/id"/>
+    </genClasses>
+    <genClasses ecoreClass="DPFText.ecore#//RId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DPFText.ecore#//RId/nums"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

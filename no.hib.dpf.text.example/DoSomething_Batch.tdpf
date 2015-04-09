@@ -1,0 +1,6 @@
+Batch{
+	testMatch(TestMatch,Test),
+	testMatch(Test,Test),
+	image(MMPetrinet2)	
+}
+

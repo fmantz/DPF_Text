@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://no.hib.dpf/dpf-text" 
+       class = "no.hib.dpf.text.tdpf.TdpfPackage"
+       genModel = "no/hib/dpf/text/DPFText.genmodel" /> 	
+  </extension>
+
+  <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+    <launchConfigurationType
+        name="Dpf-Text Batch File"
+        delegate="no.hib.dpf.text.DPFTextLauncher"
+         modes="run"                
+        id="no.hib.dpf.text.Launcher.ID">        
+    </launchConfigurationType>
+  </extension>
+
+  <extension point="org.eclipse.debug.core.launchConfigurationComparators">
+    <launchConfigurationComparator
+        id="no.hib.dpf.text.DPFTextLaunchConfigComparator"
+        class="no.hib.dpf.text.DPFTextLaunchConfigComparator"
+        attribute="DPF_TEXT_LAUNCH_FILE"/>
+  </extension>
+
+</plugin>

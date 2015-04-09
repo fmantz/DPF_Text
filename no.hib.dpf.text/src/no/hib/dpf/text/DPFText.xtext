@@ -1,0 +1,137 @@
+grammar no.hib.dpf.text.DPFText with org.eclipse.xtext.common.Terminals
+
+generate tdpf "http://no.hib.dpf/dpf-text"
+
+//Program:                                                                                                                                                                                                           
+Model: 
+  Specification | Signature | Batch 
+;
+
+enum DataType:
+        TBOOLEAN = 'Boolean'
+        | TCHAR = 'Char'
+        | TBYTE = 'Byte'
+        | TSHORT = 'Short'
+        | TINT = 'Int'
+        | TLONG = 'Long'
+        | TFLOAT = 'Float'
+        | TDOUBLE = 'Double'
+        | TSTRING = 'String'
+;
+
+enum GraphvizOutput: 
+      JPG     = 'jpg'
+    | BMP = 'bmp'     //Windows Bitmap Format'   
+    | CANON = 'canon'
+    | DOT   = 'dot' //DOT 
+    | XDOT  = 'xdot' 
+    | CMAP  = 'cmap' //Client-side imagemap (deprecated)
+    | EPS   = 'eps'  //Encapsulated PostScript
+    | FIG   = 'fig'
+    | GD    = 'gd'
+    | GD2   = 'gd2'  //GD/GD2 formats
+    | GIF   = 'gif'  //GIF
+    | GTK   = 'gtk'  //GTK canvas
+    | ICO   = 'ico'  //Icon Image File Format
+    | IMAP  = 'imap' //
+    | CMAPX = 'cmapx'//   Server-side and client-side imagemaps
+    | IMAP_NP = 'imap_np' 
+    | CMAP_NP = 'cmapx_np'//Server-side and client-side imagemaps
+    | ISMAP   = 'ismap'   //Server-side imagemap (deprecated)
+    | JPEG    = 'jpeg'
+    | JPE     = 'jpe'   //JPEG
+    | PDF     = 'pdf'   //Portable Document Format (PDF)
+    | PLAIN   = 'plain'
+    | PLAIN_EXT = 'plain-ext' //Simple text format
+    | PNG       = 'png'       //Portable Network Graphics format
+    | PS        = 'ps'        //PostScript
+    | PS2       = 'ps2'       //PostScript for PDF
+    | SVG       = 'svg'
+    | SVGZ      = 'svgz'      //Scalable Vector Graphics
+    | TIF       = 'tif'
+    | TIFF      = 'tiff'      //TIFF (Tag Image File Format)
+    | VML       = 'vml'
+    | VMLZ      = 'vmlz'      //Vector Markup Language (VML)
+    | VRML      = 'vrml'      //VRML
+    | WBMP      = 'wbmp'      //Wireless BitMap format
+    | WEBP      = 'webp'      //Image format for the Web
+    | XLIB      = 'xlib';
+
+enum ConstraintLanguage: OCL = 'OCL'; // |KodKod = 'KodKod'; 
+
+//
+//Batch jobs:
+//
+Batch: 'Batch' '{' (commands+=Command (',' commands+=Command)*)? '}'; 
+
+//"Program-Parts":
+Command:  MakeEmf | MakeEcore | MakeImage | MakeDiagram | TestMatch; //Rule | Evolution;
+
+MakeEmf: 'emf' '(' id=ID ')';
+
+MakeEcore: 'ecore' '(' id=ID ')';
+
+MakeImage: 'image' '(' id=ID (','type=GraphvizOutput)? ')';
+
+MakeDiagram: 'diagram' '(' id=ID (','type=GraphvizOutput)? ')';
+
+TestMatch: 'testMatch' '(' search=ID ',' into=ID ')';
+
+//
+//Specification:
+//
+Specification : 'Specification' version=Version ':' type=ChoosenSpecification (output='<PLAIN>')? '{' 
+         graph=Graph
+         atomicConstraints+=ConstraintList* 
+'}';
+
+ConstraintList : 'Constraints' '!' constraintSemantic=ChoosenSignature '{'
+         			(constraints+=Constraint (',' constraints+=Constraint)*)? 
+         		 '}';
+
+ChoosenSpecification : id=ID '<version=' versionName=STRING '>';
+
+Version : '<version=' name = STRING ',' number = INT ',' nextNumber = INT '>';
+
+ChoosenSignature : id=ID '<version=' versionName=STRING '>';
+
+Constraint: type=DpfId '(' (parameter+=STRING (',' parameter+=STRING)*)? ')' '{'(arity_d+=(Arrow | NodeSimple) (',' arity_d+=(Arrow | NodeSimple))*) '}';
+
+//
+//Signature:
+//
+Signature: 'Signature' version=Version ('<' input=ConstraintLanguage'>') ? '{'
+                validators+=Validator (',' validators+=Validator)*
+           '}'; 
+
+Validator: id=DpfId '(' (parameter_vars+=ID (',' parameter_vars+=ID)*)? ')' '{'(arity+=(Arrow | NodeSimple) (',' arity+=(Arrow | NodeSimple))*) '}' '=' ocl=STRING 'errorMsg=' errorMsg=STRING;
+
+//
+//Typed graphs:
+//
+Graph : 'Graph' '{' (elements+=Element (',' elements+=Element)*)? '}';  //Warning is OK, Empty Graph is possible
+
+Element: Node | Arrow;
+                                                                                
+Arrow: ( sr=NodeSimple '-' id=DpfId ':*->'              tgDataType=DataType) 
+     | ( sr=NodeSimple '-' id=DpfId ':' type=DpfId '->' tgValue=AttributeValue)
+     | ( sr=NodeSimple '-' id=DpfId ':' type=DpfId '->' tgNode=NodeSimple)
+     | ( sr=NodeSimple '-|>' tgNode=NodeSimple);  
+       
+Node: id=DpfId ':' type=DpfId 
+        ('extends' inh+=NodeSimple ('and' inh+=NodeSimple)*)?
+        ('{'(properties+=Property (',' properties+=Property)*)? '}')?
+;
+
+NodeSimple:id=DpfId ':' type=DpfId;
+
+Property:   (id=DpfId ':*->' tgDataType=DataType) 
+          | (id=DpfId ':' type=DpfId '->' tgValue=AttributeValue) 
+          | (id=DpfId ':' type=DpfId '->' tgNode=NodeSimple);
+
+
+AttributeValue: value=STRING | variableId=ID; //Id for Variable 
+
+DpfId: name=ID ('@' id=RId)?;
+
+RId:   nums+=INT (',' nums+=INT)*;

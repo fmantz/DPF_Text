@@ -1,0 +1,9 @@
+Signature<version="0",1,14><OCL> {
+	abstract@1(min){x:_}="context #x# inv: false" errorMsg="instance of an abstract element", 
+	irr@2(){x:_-y:_->z:_}="context #x# inv: not #y#->includes(self)" errorMsg="[irr] constraint violated",
+	min@3(min){x:_-y:_->z:_}="context #x# inv: #y#->size() >= #min#" errorMsg="[min] constraint violated",
+	minMax@4(minMax){x:_-y:_->z:_}="context #x# inv: #y#->size() = #minMax#" errorMsg="[min_max] constraint violated",
+	sur@5(){x:_-y:_->z:_}="context #z# inv: not O#y#->isEmpty()" errorMsg="[sur] constraint violated"
+    
+    //Add more predicates here!
+}

@@ -1,0 +1,29 @@
+Specification<version="1",1,7>:ClassModel<version="1">{
+ Graph {
+   Place@2:Class@0{
+      pTArrow@4:reference@1->Transition@1:Class@0,
+      token@5:*->Int
+   },
+   Transition@1:Class@0{
+      tPArrow@3:reference@1->Place@2:Class@0
+   }
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

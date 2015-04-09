@@ -1,0 +1,80 @@
+Specification<version="1",1,121>:MMPetrinet2<version="1">{
+ Graph {
+   Lonely@115:Place@2,
+   a1@105:PTArrow@6{
+      s@112:src@8->p1@106:Place@2,
+      t@111:trg@7->t1@102:Transition@1
+   },
+   a2@103:PTArrow@6{
+      s@110:src@8->p2@104:Place@2,
+      t@109:trg@7->t1@102:Transition@1
+   },
+   a3@101:TPArrow@9{
+      s@108:src@10->t1@102:Transition@1
+   },
+   p1@106:Place@2{
+      t@114:token@5->"1"
+   },
+   p2@104:Place@2{
+      f@116:token@5->"1",
+      t@113:token@5->"1"
+   }
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

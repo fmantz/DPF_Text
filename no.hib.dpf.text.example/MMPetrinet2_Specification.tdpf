@@ -1,0 +1,76 @@
+Specification<version="1",16,17>:ClassModel<version="1">{
+ Graph {
+   Arrow@12:Class@0{
+      weight@13,14:*->Int
+   },
+   PTArrow@6:Class@0 extends Arrow@12:Class@0{
+      src@8:reference@1->Place@2:Class@0,
+      trg@7:reference@1->Transition@1:Class@0
+   },
+   Place@2:Class@0{
+      token@5:*->Int
+   },
+   TPArrow@9:Class@0 extends Arrow@12:Class@0{
+      src@10:reference@1->Transition@1:Class@0,
+      trg@11:reference@1->Place@2:Class@0
+   }
+ }
+ Constraints!MySig<version="1">{
+   jsur@15(){PTArrow@6:Class@0-src@8:reference@1->Place@2:Class@0,TPArrow@9:Class@0-trg@11:reference@1->Place@2:Class@0},
+   minMax@4("1"){PTArrow@6:Class@0-src@8:reference@1->Place@2:Class@0},
+   minMax@4("1"){PTArrow@6:Class@0-trg@7:reference@1->Transition@1:Class@0},
+   minMax@4("1"){TPArrow@9:Class@0-src@10:reference@1->Transition@1:Class@0},
+   minMax@4("1"){TPArrow@9:Class@0-trg@11:reference@1->Place@2:Class@0}
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

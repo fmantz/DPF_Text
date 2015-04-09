@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tdpf" nsURI="http://no.hib.dpf/dpf-text" nsPrefix="tdpf">
+  <eClassifiers xsi:type="ecore:EClass" name="Model"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="TBOOLEAN" literal="Boolean"/>
+    <eLiterals name="TCHAR" value="1" literal="Char"/>
+    <eLiterals name="TBYTE" value="2" literal="Byte"/>
+    <eLiterals name="TSHORT" value="3" literal="Short"/>
+    <eLiterals name="TINT" value="4" literal="Int"/>
+    <eLiterals name="TLONG" value="5" literal="Long"/>
+    <eLiterals name="TFLOAT" value="6" literal="Float"/>
+    <eLiterals name="TDOUBLE" value="7" literal="Double"/>
+    <eLiterals name="TSTRING" value="8" literal="String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GraphvizOutput">
+    <eLiterals name="JPG" literal="jpg"/>
+    <eLiterals name="BMP" value="1" literal="bmp"/>
+    <eLiterals name="CANON" value="2" literal="canon"/>
+    <eLiterals name="DOT" value="3" literal="dot"/>
+    <eLiterals name="XDOT" value="4" literal="xdot"/>
+    <eLiterals name="CMAP" value="5" literal="cmap"/>
+    <eLiterals name="EPS" value="6" literal="eps"/>
+    <eLiterals name="FIG" value="7" literal="fig"/>
+    <eLiterals name="GD" value="8" literal="gd"/>
+    <eLiterals name="GD2" value="9" literal="gd2"/>
+    <eLiterals name="GIF" value="10" literal="gif"/>
+    <eLiterals name="GTK" value="11" literal="gtk"/>
+    <eLiterals name="ICO" value="12" literal="ico"/>
+    <eLiterals name="IMAP" value="13" literal="imap"/>
+    <eLiterals name="CMAPX" value="14" literal="cmapx"/>
+    <eLiterals name="IMAP_NP" value="15" literal="imap_np"/>
+    <eLiterals name="CMAP_NP" value="16" literal="cmapx_np"/>
+    <eLiterals name="ISMAP" value="17" literal="ismap"/>
+    <eLiterals name="JPEG" value="18" literal="jpeg"/>
+    <eLiterals name="JPE" value="19" literal="jpe"/>
+    <eLiterals name="PDF" value="20" literal="pdf"/>
+    <eLiterals name="PLAIN" value="21" literal="plain"/>
+    <eLiterals name="PLAIN_EXT" value="22" literal="plain-ext"/>
+    <eLiterals name="PNG" value="23" literal="png"/>
+    <eLiterals name="PS" value="24" literal="ps"/>
+    <eLiterals name="PS2" value="25" literal="ps2"/>
+    <eLiterals name="SVG" value="26" literal="svg"/>
+    <eLiterals name="SVGZ" value="27" literal="svgz"/>
+    <eLiterals name="TIF" value="28" literal="tif"/>
+    <eLiterals name="TIFF" value="29" literal="tiff"/>
+    <eLiterals name="VML" value="30" literal="vml"/>
+    <eLiterals name="VMLZ" value="31" literal="vmlz"/>
+    <eLiterals name="VRML" value="32" literal="vrml"/>
+    <eLiterals name="WBMP" value="33" literal="wbmp"/>
+    <eLiterals name="WEBP" value="34" literal="webp"/>
+    <eLiterals name="XLIB" value="35" literal="xlib"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConstraintLanguage">
+    <eLiterals name="OCL" literal="OCL"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Batch" eSuperTypes="#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
+        eType="#//Command" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MakeEmf" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MakeEcore" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MakeImage" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GraphvizOutput"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MakeDiagram" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GraphvizOutput"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestMatch" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="search" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="into" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Specification" eSuperTypes="#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//Version"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ChoosenSpecification"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="output" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="#//Graph"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atomicConstraints" upperBound="-1"
+        eType="#//ConstraintList" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraintSemantic" eType="#//ChoosenSignature"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChoosenSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Version">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChoosenSignature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DpfId"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arity_d" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Signature" eSuperTypes="#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" eType="#//Version"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="#//ConstraintLanguage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validators" upperBound="-1"
+        eType="#//Validator" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Validator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//DpfId" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter_vars" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arity" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ocl" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorMsg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Graph">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Element" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//DpfId" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DpfId"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arrow" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sr" eType="#//NodeSimple"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tgDataType" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgValue" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgNode" eType="#//NodeSimple"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inh" upperBound="-1" eType="#//NodeSimple"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeSimple">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//DpfId" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DpfId"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//DpfId" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tgDataType" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DpfId"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgValue" eType="#//AttributeValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tgNode" eType="#//NodeSimple"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DpfId">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="id" eType="#//RId" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RId">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nums" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>
